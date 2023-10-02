@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Avatar,
-  Box,
   Card,
   CardActions,
   CardContent,
@@ -21,8 +20,8 @@ const PostH = () => {
       <Card sx={{m:5}}>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-              R
+            <Avatar sx={{ bgcolor: "teal" }} aria-label="recipe">
+              A
             </Avatar>
           }
           action={
@@ -30,7 +29,7 @@ const PostH = () => {
               <MoreVertIcon />
             </IconButton>
           }
-          title="Shrimp and Chorizo Paella"
+          title="Ahmed Mohsen"
           subheader="September 14, 2023"
         />
         <CardMedia
