@@ -81,7 +81,7 @@ const Navbar = () => {
         <UserBox onClick={(e) => setOpenMenu(true)}>
           <Avatar sx={{ width: 30, height: 30 }} src={avatarPath1} />
           <Typography variant="span" sx={{ color: "wheit" }}>
-            Name
+            Jon Doe
           </Typography>
         </UserBox>
       </StyledToolbar>
