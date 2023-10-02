@@ -35,7 +35,8 @@ const PostH = () => {
         <CardMedia
           component="img"
           height="15%"
-          image="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          // image="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          image="https://images.pexels.com/photos/460295/pexels-photo-460295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="Paella dish"
         />
         <CardContent>

@@ -31,17 +31,17 @@ const UserBox = styled(Box)({
   alignItems: "center",
   gap: "10px",
 });
-const StyledBox = styled(Box)({
-  display: "flex",
-  alignItems: "center",
-  gap: "10px",
-});
+// const StyledBox = styled(Box)({
+//   display: "flex",
+//   alignItems: "center",
+//   gap: "10px",
+// });
 
 const avatarPath1 =
   "https://images.pexels.com/photos/4890259/pexels-photo-4890259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
 const Add = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -65,7 +65,7 @@ const Add = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box width={400} height={280} bgcolor={"white"} borderRadius={5} p={3}>
+        <Box width={400} height={280} bgcolor={"background.default"} color={"text.primary"} borderRadius={5} p={3}>
           <Typography color={"gray"} variant="h6" textAlign="center">
             Create post
           </Typography>
