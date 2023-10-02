@@ -84,21 +84,23 @@ const Add = () => {
             variant="standard"
             placeholder="What's on your mind"
           />
-            <Stack spacing={2} direction="row">
-              <EmojiEmotions color="primary" />
-              <Image color="secondary" />
-              <VideoCameraBack color="success" />
-              <PersonAdd color="error" />
-            </Stack>
-            <ButtonGroup
-              fullWidth
-              variant="contained"
-              aria-label="outlined primary button group"
-            >
-              <Button>One</Button>
-              <Button sx={{width:"100px"}}><DateRange/></Button>
-            </ButtonGroup>
-
+          <Stack spacing={2} direction="row">
+            <EmojiEmotions color="primary" />
+            <Image color="secondary" />
+            <VideoCameraBack color="success" />
+            <PersonAdd color="error" />
+          </Stack>
+          <ButtonGroup
+            fullWidth
+            sx={{ marginTop: 1 }}
+            variant="contained"
+            aria-label="outlined primary button group"
+          >
+            <Button>One</Button>
+            <Button sx={{ width: "100px" }}>
+              <DateRange />
+            </Button>
+          </ButtonGroup>
         </Box>
       </StyledModal>
     </>
