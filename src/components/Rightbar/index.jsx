@@ -57,8 +57,8 @@ const Rightbar = () => {
           }}
         >
           {latestConversations?.map((item, index) => (
-            <>
-              <ListItem key={index} alignItems="flex-start">
+            <React.Fragment key={index}>
+              <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                   <Avatar alt={item.title} src={item.image} />
                 </ListItemAvatar>
@@ -81,7 +81,7 @@ const Rightbar = () => {
               {index < latestConversations.length - 1 && (
                 <Divider variant="inset" component="li" />
               )}
-            </>
+            </React.Fragment>
           ))}
         </List>
       </Box>
