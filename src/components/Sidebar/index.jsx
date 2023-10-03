@@ -14,7 +14,11 @@ import { ModeNight } from "@mui/icons-material";
 
 const Sidebar = () => {
   return (
-    <Box sx={{ backgroundColor: "tan" }} flex={1}>
+    <Box
+      sx={{ backgroundColor: "tan",  display: { xs: "none", sm: "block" } }}
+      flex={1}
+      p={2}
+    >
       <List>
         {menuItemsForSidebar?.map((item, index) => (
           <ListItem key={index} disablePadding>
@@ -29,7 +33,7 @@ const Sidebar = () => {
             <ListItemIcon>
               <ModeNight />
             </ListItemIcon>
-            <Switch/>
+            <Switch />
           </ListItemButton>
         </ListItem>
       </List>
