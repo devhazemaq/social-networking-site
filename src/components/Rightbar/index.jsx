@@ -28,7 +28,7 @@ const Rightbar = () => {
 
         <AvatarGroup max={7}>
           {avatarUsers?.map((item, index) => (
-            <Avatar value={index} alt={item.name} src={item.image} />
+            <Avatar key={index} alt={item.name} src={item.image} />
           ))}
         </AvatarGroup>
 
