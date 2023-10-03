@@ -12,31 +12,35 @@ import {
 import { menuItemsForSidebar } from "../../constants";
 import { ModeNight } from "@mui/icons-material";
 
-const Sidebar = () => {
+const Sidebar = ({ mode, setMode }) => {
   return (
     <Box
-      sx={{ backgroundColor: "tan",  display: { xs: "none", sm: "block" } }}
-      flex={1}
+      flex={1.5}
       p={2}
+      sx={{ display: { xs: "none", sm: "block" }, position: "relative" }}
     >
-      <List>
-        {menuItemsForSidebar?.map((item, index) => (
-          <ListItem key={index} disablePadding>
+      <Box position="fixed">
+        <List>
+          {menuItemsForSidebar?.map((item, index) => (
+            <ListItem key={index} disablePadding>
+              <ListItemButton component="a" href="#simple-list">
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+          <ListItem disablePadding>
             <ListItemButton component="a" href="#simple-list">
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.text} />
+              <ListItemIcon>
+                <ModeNight />
+              </ListItemIcon>
+              <Switch
+                onChange={(e) => setMode(mode === "light" ? "dark" : "light")}
+              />
             </ListItemButton>
           </ListItem>
-        ))}
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#simple-list">
-            <ListItemIcon>
-              <ModeNight />
-            </ListItemIcon>
-            <Switch />
-          </ListItemButton>
-        </ListItem>
-      </List>
+        </List>
+      </Box>
     </Box>
   );
 };
