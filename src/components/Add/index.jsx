@@ -54,7 +54,7 @@ const Add = () => {
           <UserBox>
             <Avatar sx={{ width: 30, height: 30 }} src={"assets/images/hhh.jpg"} />
             <Typography variant="span" fontWeight={500}>
-              Jon Doe
+              Hazem
             </Typography>
           </UserBox>
           <TextField
