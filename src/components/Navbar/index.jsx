@@ -21,7 +21,7 @@ import { Mail, Notifications } from "@mui/icons-material";
 const Navbar = () => {
   return (
     <Box>
-      <AppBar position="static">
+      <AppBar position="fixed" >
         <StyledToolbar>
           <Typography variant="h6">Haz Haz</Typography>
           <StyledSearch>
