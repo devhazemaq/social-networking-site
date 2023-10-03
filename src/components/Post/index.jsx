@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material";
+import { Bookmark, ContentCut, Delete, Edit, Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material";
 import {
   Avatar,
   Card,
@@ -9,11 +9,25 @@ import {
   CardHeader,
   CardMedia,
   Checkbox,
+  Divider,
   IconButton,
+  ListItemIcon,
+  ListItemText,
+  Menu,
+  MenuItem,
   Typography,
 } from "@mui/material";
 
 const Post = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <>
       <Card sx={{ m: 5 }}>
@@ -25,7 +39,14 @@ const Post = () => {
             </Avatar>
           }
           action={
-            <IconButton aria-label="settings">
+            <IconButton
+              aria-label="settings"
+              id="iconbutton-settings"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
               <MoreVert />
             </IconButton>
           }
@@ -57,6 +78,37 @@ const Post = () => {
           </IconButton>
         </CardActions>
       </Card>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "iconbutton-settings",
+        }}
+      >
+        <MenuItem>
+          <ListItemIcon onClick={handleClose} >
+            <Bookmark fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Save post</ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemIcon onClick={handleClose} >
+            <Edit fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Edit post</ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemIcon onClick={handleClose} >
+            <Delete fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>Delete post</ListItemText>
+        </MenuItem>
+        
+      </Menu>
     </>
   );
 };
